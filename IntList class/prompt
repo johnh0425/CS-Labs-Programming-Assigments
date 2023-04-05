@@ -1,1 +1,31 @@
+You are required to come up with a single header file (IntList.h) that declares and implements the IntNode class (just copy it exactly as it is below) as well as declares the IntList Class interface only. You are also required to come up with a separate implementation file (IntList.cpp) that implements the member functions of the IntList class. While developing your IntList class you must write your own test harness (within a file named main.cpp). Never implement more than 1 or 2 member functions without fulling testing them with your own test harness.
 
+IntNode struct
+I am providing the IntNode class you are required to use. Place this class definition within the IntList.h file exactly as is. Make sure you place it above the definition of your IntList class. Notice that you will not code an implementation file for the IntNode class. The IntNode constructor has been defined inline (within the class declaration). Do not write any other functions for the IntNode class. Use as is.
+
+struct IntNode {
+    int data;
+    IntNode *next;
+    IntNode(int data) : data(data), next(0) {}
+};
+IntList class
+Encapsulated (Private) Data Fields
+head: IntNode *
+tail: IntNode *
+Public Interface (Public Member Functions)
+IntList(): Initializes an empty list.
+~IntList(): Deallocates all remaining dynamically allocated memory (all remaining IntNodes).
+void display() const: Displays to a single line all of the int values stored in the list, each separated by a space. This function does NOT output a newline or space at the end.
+void push_front(int value): Inserts a data value (within a new node) at the front end of the list.
+void pop_front(): Removes the value (actually removes the node that contains the value) at the front end of the list. Does nothing if the list is already empty.
+bool empty() const: Returns true if the list does not store any data values (does not have any nodes), otherwise returns false.
+The remaining functions may only be developed in your private workspace. Copy the 3 files from lab 7 into your private workspace before beginning on these functions:
+
+IntList(const IntList &cpy): the copy constructor. Make sure this performs deep copy.
+IntList & operator=(const IntList &rhs): the overloaded assignment operator. Make sure this performs deep copy.
+void push_back(int value): Inserts a data value (within a new node) at the back end of the list.
+void clear(): Removes (deallocates) all IntNodes in the IntList. Don't forget to set both head and tail to appropriate values for an empty list.
+void selection_sort(): Sorts the integers in the list into ascending order. Do NOT move the nodes, just the integers.
+void insert_ordered(int value): Inserts a data value (within a new node) in an ordered list. Assumes the list is already sorted in ascending order (i.e., Do not sort the list first, assume the list is already is sorted.) This function loops through the list until if finds the correct position for the new data value and then inserts the new IntNode in that location. This function may NOT ever sort the list.
+void remove_duplicates(): Removes all duplicate data values (actually removes the nodes that contain the values) within the list. Always remove just the later value within the list when a duplicate is found. This function may NOT ever sort the list.
+friend ostream & operator<<(ostream &out, const IntList &rhs): A global friend function that outputs to the stream all of the integer values within the list on a single line, each separated by a space. This function does NOT send to the stream a newline or space at the end.
