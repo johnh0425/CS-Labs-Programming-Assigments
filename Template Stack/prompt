@@ -1,1 +1,12 @@
+Implement template stack class that is capable of storing integer and string values. Write both header and implementation in one file (stack.h).
 
+Private data fields:
+data: An array with maximum size of 20. (Declare a constant in stack.h called MAX_SIZE and set it to 20.)
+size: stores the current number of elements in the stack.
+Public interface:
+stack(): constructs an empty stack.
+push(T val): inserts a new element (val) of type T (T could be integer or string) into the data. If the data array is full, this function should throw an overflow_error exception with error message "Called push on full stack.".
+pop(): removes the last element from data. If the data array is empty, this function should throw an outofrange exception with error message "Called pop on empty stack.".
+pop_two(): removes the last two elements from data. If the data array is empty or is of size 1, this function should throw an out_of_range exception. If empty then the error message should be "Called pop_two on empty stack." If the size is 1 then the error message should be "Called pop_two on a stack of size 1.".
+top(): returns the top element of stack (last inserted element). If stack is empty, this function should throw an underflow_error exception with error message "Called top on empty stack.".
+empty(): returns true if the stack is empty otherwise it returns false.
