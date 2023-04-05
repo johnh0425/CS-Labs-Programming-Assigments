@@ -1,1 +1,62 @@
+For PROGRAM 4, you are going to build a smaller, simpler version of the STL vector class that is capable of only storing integers. Appropriately, it will be called IntVector. This class will encapsulate a dynamically allocated array of integers.
 
+You are required to come up with a header file (IntVector.h) that declares the class interface and a separate implementation file (IntVector.cpp) that implements the member functions. You will also create a test harness (main.cpp) that you use to test each function you are currently developing.
+
+Never implement more than 1 or 2 functions without compiling and unit testing them before moving on.
+
+The final test harness (main.cpp) file should include all of the tests you performed on each member function. Feel free to comment out previous tests while you are working on later member functions. However, the final test harness should test ALL of your member functions thoroughly. zyBooks will not grade your main function. However, we will spot check the assignments and take off points for any PROGRAM that does not have this test harness in the main.cpp file.
+
+For this LAB 6 (Part 2), you are to implement just the 2 constructors, the destructor, and the accessor functions, size, capacity, empty, at, front, and back. Note that you are 2 versions of the at, front and back functions, an accessor (const) and mutator (non-const) version. You are to only implement the accessor (const) versions of these for this LAB.
+
+Encapsulated (Private) Data Fields
+unsigned sz: stores the size of the IntVector (the number of elements currently being used).
+unsigned cap: store the size of the array
+int *data: stores the address of the dynamically-allocated array of integers
+Public Interface (Public Member Functions)
+IntVector()
+IntVector(unsigned size, int value = 0)
+~IntVector()
+unsigned size() const
+unsigned capacity() const
+bool empty() const
+const int & at(unsigned index) const
+const int & front() const
+const int & back() const
+You will not be implementing iterators. On the most part, though, the above functions should work just like the STL vector class member function with the same name. Please see the following pages to get a better idea of what each function should do: STL Vector
+
+Constructors, Destructor and Accessors
+IntVector() - the Default constructor
+This function should set both the size and capacity of the IntVector to 0 and will not allocate any memory to store integers.
+(Make sure you do not have a dangling pointer.)
+
+IntVector(unsigned size, int value = 0)
+Sets both the size and capacity of the IntVector to the value of the parameter passed in and dynamically allocates an array of that size as well. This function should initialize all elements of the array to the value of the 2nd parameter.
+
+~IntVector()
+The destructor is used to clean up (delete) any remaining dynamically-allocated memory. For this class, that will be the array pointed to by the int pointer called data.
+
+unsigned size() const
+This function returns the current size (not the capacity) of the IntVector object, which is the values stored in the sz data field.
+
+unsigned capacity() const
+This function returns the current capacity (not the size) of the IntVector object, which is the value stored in the cap data field.
+
+bool empty() const
+Returns whether the IntVector is empty (the sz field is 0).
+
+const int & at(unsigned index) const
+This function will return the value stored in the element at the passed in index position. Your function should throw an outofrange exception if an invalid index is passed in. An invalid index is an index greater than or equal to the size.
+
+Throwing an exception: You will need to include the standard library stdexcept. Then, when the index is out of range, execute the following statement:
+
+throw out_of_range("IntVector::at_range_check");
+To test if this worked, declare an IntVector of size 10 and then call the at function passing it an index argument of 10 or larger. You should see the following output:
+
+terminate called after throwing an instance of 'std::out_of_range'
+  what():  IntVector::at_range_check
+Aborted
+const int & front() const
+This function will return the value stored in the first element.
+
+const int & back() const
+This function will return the value stored in the last element.
