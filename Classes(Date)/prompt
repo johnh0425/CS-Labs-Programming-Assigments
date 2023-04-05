@@ -1,1 +1,100 @@
+Build a Date class and a main function to test it.
 
+Specifications
+Below is the interface for the Date class: it is our "contract" with you: you have to implement everything it describes, and show us that it works with a test harness that puts it through its paces. The comments in the interface below should be sufficient for you to understand the project (use these comments in your Date declaration), without the need of any further documentation. But of course, as always, you can ask us any questions you may have on Piazza.
+
+class Date
+{
+ private:
+   unsigned day;
+   unsigned month;
+   string monthName;
+   unsigned year;
+
+ public:
+   // creates the date January 1st, 2000.
+   Date();
+
+
+   /* parameterized constructor: month number, day, year 
+       - e.g. (3, 1, 2010) will construct the date March 1st, 2010
+
+       If any of the arguments are invalid (e.g. 15 for month or 32 for day)
+       then the constructor will construct instead a valid Date as close
+       as possible to the arguments provided - e.g. in above example,
+       Date(15, 32, 2010), the Date would be corrected to Dec 31st, 2010.
+       In case of such invalid input, the constructor will issue a console error message: 
+
+       Invalid date values: Date corrected to 12/31/2010.
+       (with a newline at the end).
+   */
+   Date(unsigned m, unsigned d, unsigned y);
+
+
+   /* parameterized constructor: month name, day, year
+ ­      - e.g. (December, 15, 2012) will construct the date December 15th, 2012
+
+       If the constructor is unable to recognize the string argument as a valid month name,
+       then it will issue a console error message: 
+
+       Invalid month name: the Date was set to 1/1/2000.
+       (with a newline at the end).
+
+       If the day argument is invalid for the given month (but the month name was valid),
+       then the constructor will handle this error in the same manner as the other
+       parameterized constructor. 
+
+       This constructor will recognize both "december" and "December"
+       as month name.
+   */
+   Date(const string &mn, unsigned d, unsigned y);
+
+
+   /* Outputs to the console (cout) a Date exactly in the format "3/1/2012". 
+      Does not output a newline at the end.
+   */
+   void printNumeric() const;
+
+
+   /* Outputs to the console (cout) a Date exactly in the format "March 1, 2012".
+      The first letter of the month name is upper case, and the month name is
+      printed in full - January, not Jan, jan, or january. 
+      Does not output a newline at the end.
+   */
+   void printAlpha() const;
+
+ private:
+
+   /* Returns true if the year passed in is a leap year, otherwise returns false.
+   */
+   bool isLeap(unsigned y) const;
+
+
+   /* Returns number of days allowed in a given month
+      -  e.g. daysPerMonth(9, 2000) returns 30.
+      Calculates February's days for leap and non-­leap years,
+      thus, the reason year is also a parameter.
+   */
+   unsigned daysPerMonth(unsigned m, unsigned y) const;
+
+   /* Returns the name of a given month
+      - e.g. name(12) returns the string "December"
+   */
+   string name(unsigned m) const;
+
+   /* Returns the number of a given named month
+      - e.g. number("March") returns 3
+   */
+   unsigned number(const string &mn) const;
+};
+Note: Placing the error messages into the constructors like is not necessarily a good way to handle constructor errors, but until you learn about exceptions in CS 14, it's the best we can do.
+
+Private Member Functions
+The functions declared private above, isLeap, daysPerMonth, name, number, are helper functions - member functions that will never be needed by a user of the class, and so do not belong to the public interface (which is why they are "private"). They are, however, needed by the interface functions (public member functions), which use them to test the validity of arguments and construct valid dates. For example, the constructor that passes in the month as a string will call the number function to assign a value to the unsigned member variable month.
+
+isLeap: The rule for whether a year is a leap year is:
+
+(year % 4 == 0) implies leap year
+except (year % 100 == 0) implies NOT leap year
+except (year % 400 == 0) implies leap year
+So, for instance, year 2000 is a leap year, but 1900 is NOT a leap year. Years 2004, 2008, 2012, 2016, etc. are all leap years. Years 2005, 2006, 2007, 2009, 2010, etc. are NOT leap years.
