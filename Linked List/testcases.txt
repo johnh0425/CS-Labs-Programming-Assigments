@@ -1,0 +1,119 @@
+John Hsu
+862314810
+
+JAMZ
+o
+a
+SD123
+Peg
+Steely Dan
+237
+d
+SD123
+o
+a
+SD123
+Peg
+Steely Dan
+237
+o
+q
+
+JAMZ
+a
+SD123
+Peg
+Steely Dan
+237
+s
+Steely Dan
+s
+Janet Jackson
+d
+SD123
+s
+Steely Dan
+q
+
+JAMZ
+SD123
+Peg
+Steely Dan
+237
+a
+JJ234
+All For You
+Janet Jackson
+197
+t
+d
+SD123
+t
+d
+JJ234
+t
+q
+
+JAMZ
+a
+SD123
+Peg
+Steely Dan
+237
+a
+JJ234
+All For You
+Janet Jackson
+391
+a
+J345
+Canned Heat
+Jamiroquai
+330
+a
+JJ456
+Black Eagle
+Janet Jackson
+197
+a
+SD567
+I Got The News
+Steely Dan
+306
+c
+1
+5
+o
+q
+
+JAMZ
+a
+SD123
+Peg
+Steely Dan
+237
+a
+JJ234
+All For You
+Janet Jackson
+391
+a
+J345
+Canned Heat
+Jamiroquai
+330
+a
+JJ456
+Black Eagle
+Janet Jackson
+197
+a
+SD567
+I Got The News
+Steely Dan
+306
+c
+5
+1
+o
+q
