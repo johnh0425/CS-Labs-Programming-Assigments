@@ -1,1 +1,22 @@
+Implement the following global function using a recursive algorithm to reverse the contents of a string passed in by reference.
 
+void flipString(string &s);
+You may not use a loop of any kind.
+You may not use global variables.
+You may not use the word reverse anywhere within your main.cpp file.
+
+If any of these are found within your main.cpp file, you will receive a 0 on this lab.
+
+Use the following main function to test your reverse function:
+
+int main() {
+   string line;
+   cout << "Enter a sentence:" << endl;
+   getline(cin, line);
+   cout << endl;
+   cout << line << endl;
+   flipString(line);
+   cout << line << endl;
+
+   return 0;
+}
