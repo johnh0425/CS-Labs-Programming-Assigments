@@ -1,1 +1,1 @@
-
+This week you convert the operator<< function to use a recursive solution and add a recursive exists function that determines whether a particular integer value exists within the IntList.
