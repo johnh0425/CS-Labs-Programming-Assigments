@@ -1,0 +1,36 @@
+It may come as a bit of a surprise when the C++ floating-point types (float, double), fail to capture a particular value accurately. Certainly double, which is usually stored as a 64-bit value, is far better than the old float, which is only 32 bits, but problems do arise. For example:
+
+float n = 2.0;
+float d = 3.0;
+cout << precision(17);
+cout << n / d << endl;
+produces 0.6666668653488159, which is accurate to only 8 decimal places - a bit dirty for a discipline that prides itself on precision!
+
+A solution that is often used when precision is of greatest importance and all of the numbers involved are going to be "rational" (that is, expressible as a 'ratio' of two integers - i.e. a fraction) is to use a custom data type - i.e. a class - that implements fractions, or "rational numbers". This is what you will do in this lab assignment.
+
+Class Specification
+Write a C++ program that performs the rational number operations addition, subtraction, multiplication and division on two fractions. The program should be written in a single file. You will need to design a "rational number" class named Rational whose value will be a fraction (e.g., 1/128, or 22/7), with appropriate constructors and member functions. A fraction will be specified as a numerator and a denominator - e.g. the pair (8, 109) represents the fraction 8/109. The member variables should be private and accessed using the accessor and mutator functions.
+
+Constructors
+Create 3 constructors:
+
+a constructor with two parameters (numerator and denominator)
+a constructor with one parameter (denominator set to 1)
+a constructor with no parameters (0/1)
+Accessor Functions
+add
+subtract
+multiply
+divide
+display
+The following are a list of the rules of arithmetic for fractions:
+
+(a/b) + (c/d) = (ad + bc) / (b*d)
+(a/b) - (c/d) = (ad - bc) / (b*d)
+(a/b) * (c/d) = (ac) / (bd)
+(a/b) / (c/d) = (ad) / (cb)
+Note that for this lab, when you perform an operation, you do not need to simplify the resulting fraction, i.e., 4/5 * 5/10 = 20/50. You should not simplify this to 2/5 at this point.
+
+The display function should output the Rational object in the format:
+
+n / d
