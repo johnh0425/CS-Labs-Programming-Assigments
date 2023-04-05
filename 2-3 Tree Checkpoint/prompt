@@ -1,1 +1,10 @@
+This checkpoint submission is worth 20% of the PROGRAM 3 score. It uses the tests from Page 1 (except insert i) and Page 1b.
 
+You will need to reverse engineer how to do a preorder and postorder traversal in a 2-3 tree. Given the input:
+
+Die Hard, Terminator, Kill Bill Volume 1, Pirates of the Caribbean, The Lord of the Rings, Star Wars, Gladiator, Aliens, Matrix 
+The output should be:
+
+Preorder: Kill Bill Volume 1, Die Hard, Aliens, Gladiator, Pirates of the Caribbean, Matrix, Terminator, Star Wars, The Lord of the Rings
+Inorder: Aliens, Die Hard, Gladiator, Kill Bill Volume 1, Matrix, Pirates of the Caribbean, Star Wars, Terminator, The Lord of the Rings
+Postorder: Aliens, Gladiator, Die Hard, Matrix, Star Wars, Pirates of the Caribbean, The Lord of the Rings, Terminator, Kill Bill Volume 1 
