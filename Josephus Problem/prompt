@@ -1,1 +1,9 @@
+The Josephus Problem has gruesome roots, which you can read about on Wikipedia (https://en.wikipedia.org/wiki/Josephus_problem). Meanwhile, think of it as a game of Survivor: everyone sits in a circle and repeatedly votes out the person next to them, making the circle smaller until only one person remains and wins.
 
+The challenge is to figure out: Who is the last person standing?
+
+We will also add a few twists (parameters):
+
+Let n be the number of people in the initial circle (i.e., select the first n people from a list of names as input)
+Let k be the number k-th person to vote out (i.e., skip over k-1 people, and vote out the kth person)
+We want you to use a circular linked list to solve this problem. The output should declare the winner, e.g., "Paea wins!"
